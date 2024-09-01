@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patria a patria</title>
+    <meta name="description" content="Galeria" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Fernanda Ruíz" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="icon" href="./favicon.ico" />
+
+    <script src="./js/index.js"></script>
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header__content">
+          <nav class="nav">
+            <img
+              src="./images/logo.svg"
+              alt="Logotipo de galeria patria"
+              class="nav__logo"
+            />
+          </nav>
+        </div>
+
+        <div class="line"></div>
+      </header>
+
+      <main class="content">
+        <section class="profile" id="profile">
+          <div class="profile profile__col avatar">
+            <img
+              class="profile__img"
+              alt="image avatar"
+              src="./images/Avatar.png"
+            />
+          </div>
+
+          <div class="profile profile__col name">
+            <div class="profile__col-text">
+              <h1>Jacques Cousteau</h1>
+              <p>Explorador</p>
+            </div>
+            <div class="profile__col-edit">
+              <button class="profile__col-edit-button">
+                <img
+                  class="profile__col-edit-img"
+                  alt="edit button"
+                  src="./images/Edit Button.svg"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div class="profile profile__col addButton">
+            <button class="profile__col-add-button">
+              <img
+                  class="profile__col-button-img"
+                  alt="add button"
+                  src="./images/plus.svg"
+                />
+            </button>
+          </div>
+        </section>
+
+        <section class="elements" id="elements">
+          <card class="elements__item">
+            <img
+              class="elements__item-img"
+              alt="image grid item"
+              src="./images/kirill-pershin-1088404-unsplash.jpg"
+            />
+            <div class="elements__item-footer">
+              <h4>Valle Yossemite</h4>
+              <button class="elements__item-footer-button">
+                <img
+                  src="./images/like.svg"
+                  alt="icono de like"
+                  class="elements__item-footer-icon"
+                />
+              </button>
+            </div>
+          </card>
+
+          <card class="elements__item">
+            <img
+              class="elements__item-img"
+              alt="image grid item"
+              src="./images/kirill-pershin-1404681-unsplash.jpg"
+            />
+            <div class="elements__item-footer">
+              <h4>Lago Louise</h4>
+              <button class="elements__item-footer-button">
+                <img
+                  src="./images/like.svg"
+                  alt="icono de like"
+                  class="elements__item-footer-icon"
+                />
+              </button>
+            </div>
+          </card>
+
+          <card class="elements__item">
+            <img
+              class="elements__item-img"
+              alt="image grid item"
+              src="./images/kirill-pershin-1556355-unsplash.jpg"
+            />
+            <div class="elements__item-footer">
+              <h4>Montañas Calvas</h4>
+              <button class="elements__item-footer-button">
+                <img
+                  src="./images/like.svg"
+                  alt="icono de like"
+                  class="elements__item-footer-icon"
+                />
+              </button>
+            </div>
+          </card>
+
+          <card class="elements__item">
+            <img
+              class="elements__item-img"
+              alt="image grid item"
+              src="./images/kirill-pershin-1404681-unsplash-2.jpg"
+            />
+            <div class="elements__item-footer">
+              <h4>Latemar</h4>
+              <button class="elements__item-footer-button">
+                <img
+                  src="./images/like.svg"
+                  alt="icono de like"
+                  class="elements__item-footer-icon"
+                />
+              </button>
+            </div>
+          </card>
+
+          <card class="elements__item">
+            <img
+              class="elements__item-img"
+              alt="image grid item"
+              src="./images/kirill-pershin-1556355-unsplash-2.jpg"
+            />
+            <div class="elements__item-footer">
+              <h4>Vanois National</h4>
+              <button class="elements__item-footer-button">
+                <img
+                  src="./images/like.svg"
+                  alt="icono de like"
+                  class="elements__item-footer-icon"
+                />
+              </button>
+            </div>
+          </card>
+
+          <card class="elements__item">
+            <img
+              class="elements__item-img"
+              alt="image grid item"
+              src="./images/kirill-pershin-1088404-unsplash-2.jpg"
+            />
+            <div class="elements__item-footer">
+              <h4>Lago di Braies</h4>
+              <button class="elements__item-footer-button">
+                <img
+                  src="./images/like.svg"
+                  alt="icono de like"
+                  class="elements__item-footer-icon"
+                />
+              </button>
+            </div>
+          </card>
+        </section>
+      </main>
+
+      <footer class="footer" id="footer">
+        <p class="footer__copyright">© 2021 Around The U.S.</p>
+      </footer>
+    </div>
+  </body>
+</html>

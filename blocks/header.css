@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+
+}
+
+.nav img {
+  width: 126px;
+  margin: 28px 127px 37px 27px;
+}
+
+.line {
+  border: 1px solid #545454;
+  width: 100%;
+}
+/* Tablet */
+@media (min-width: 768px) {
+  .nav img {
+    width: 173px;
+    margin: 0;
+    margin-top: 45px;
+    margin-bottom: 41px;
+  }
+}
