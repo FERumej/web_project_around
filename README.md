@@ -44,6 +44,12 @@ web_project_around/
 │   ├── like.svg
 │   ├── plus.svg
 │   └── ...
-├── styles.css
-├── script.js
+├── bloks/
+│   ├── elements.css
+│   ├── footer.css
+│   ├── header.css
+│   └── ...
+├── pages/
+│   ├── index.css
+├── index.js
 └── index.html
