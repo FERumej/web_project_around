@@ -6,7 +6,7 @@ body {
   margin: 0 auto;
   font-family: "Inter", "Arial", "sans-serif";
   color: #fff;
-  max-width: 880px;
+  
 }
 
 .modal {
@@ -98,13 +98,37 @@ body {
   font-weight: 100;
   transform: scale(1.6);
   position: absolute;
-  top: 5.1rem;
-  right: 1.5rem;
+  top: 6rem;
+  right: 1rem;
   cursor: pointer;
 }
 
 
 @media (min-width: 768px) {
+  .page { 
+    max-width: 720px;
+  }
+  
+  .modal-content {
+    margin: 20% auto;
+    width: 100%;
+    max-width: 430px;
+  }
+
+  .close {
+    position: absolute;
+    font-size: 40px;
+    top: 7rem;
+    right: 6.5rem;
+    cursor: pointer;
+  }
+  
+}
+
+@media screen and (min-width: 1024px) {
+  .page { 
+    max-width: 880px;
+  }
   .modal-content {
     margin: 15% auto;
     width: 100%;
@@ -114,9 +138,20 @@ body {
   .close {
     position: absolute;
     font-size: 40px;
+    top: 9rem;
+    right: 23rem;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .close {
+    position: absolute;
+    font-size: 40px;
     top: 14rem;
     right: 40rem;
     cursor: pointer;
   }
 }
+
 
