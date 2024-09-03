@@ -6,12 +6,12 @@
 }
 
 
-.elements__item-img {
+.elements__img {
   width: 100%;
   border-radius: 10px 10px 0 0;
 }
 
-.elements__item-footer {
+.elements__footer {
   background-color: #fff;
   border-radius: 0 0 10px 10px;
   display: flex;
@@ -23,23 +23,26 @@
 
 }
 
-.elements__item-footer-button {
+.elements__footer-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-.elements__item-footer-icon {
+.elements__footer-icon {
   width: 21px;
 }
 
-.elements__item-footer h4 {
+.elements__footer h4 {
   padding: 0;
   margin: 0;
   color: black;
   font-size: 24px;
   font-weight: 900;
   line-height: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
