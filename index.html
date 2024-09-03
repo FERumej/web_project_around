@@ -3,35 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Patria a patria</title>
+    <title>Around the U.S.</title>
     <meta name="description" content="Galeria" />
     <meta name="keywords" content="HTML, CSS, JavaScript" />
     <meta name="author" content="Fernanda Ruíz" />
     <link rel="stylesheet" href="./pages/index.css" />
     <link rel="icon" href="./favicon.ico" />
-
-    <script src="./js/index.js"></script>
   </head>
 
   <body>
     <div class="page">
+
       <header class="header">
         <div class="header__content">
-          <nav class="nav">
+          <nav class="header__nav">
             <img
               src="./images/logo.svg"
-              alt="Logotipo de galeria patria"
-              class="nav__logo"
+              alt="Logotipo de Around the U.S."
+              class="header__logo"
             />
           </nav>
         </div>
-
-        <div class="line"></div>
+        <div class="header__line"></div>
       </header>
 
       <main class="content">
         <section class="profile" id="profile">
-          <div class="profile profile__col avatar">
+          <div class="profile__col profile__co--avatar">
             <img
               class="profile__img"
               alt="image avatar"
@@ -39,15 +37,15 @@
             />
           </div>
 
-          <div class="profile profile__col name">
-            <div class="profile__col-text">
+          <div class="profile__col profile__col--name">
+            <div class="profile__text">
               <h1>Jacques Cousteau</h1>
               <p>Explorador</p>
             </div>
-            <div class="profile__col-edit">
-              <button class="profile__col-edit-button">
+            <div class="profile__edit">
+              <button class="profile__edit-button" id="openEditModal">
                 <img
-                  class="profile__col-edit-img"
+                  class="profile__edit-img"
                   alt="edit button"
                   src="./images/Edit Button.svg"
                 />
@@ -55,14 +53,40 @@
             </div>
           </div>
 
-          <div class="profile profile__col addButton">
-            <button class="profile__col-add-button">
+          <div class="profile profile__col--add">
+            <button class="profile__add-button" id="openAddModal">
               <img
-                  class="profile__col-button-img"
-                  alt="add button"
-                  src="./images/plus.svg"
-                />
+                class="profile__button-img"
+                alt="add button"
+                src="./images/plus.svg"
+              />
             </button>
+          </div>
+
+          <div id="editModal" class="profile__edit-modal modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+
+              <h2>Editar perfil</h2>
+              <form id="editForm">
+                <!-- <label for="name">Nombre:</label> -->
+                <input
+                  placeholder="Name"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                />
+                <!-- <label for="aboutMe">Acerca de mí:</label> -->
+                <input
+                  placeholder="Acerca de mí"
+                  id="aboutMe"
+                  name="aboutMe"
+                  required
+                />
+                <button id="buttonEdit" disabled type="submit">Guardar</button>
+              </form>
+            </div>
           </div>
         </section>
 
@@ -75,11 +99,12 @@
             />
             <div class="elements__item-footer">
               <h4>Valle Yossemite</h4>
-              <button class="elements__item-footer-button">
+              <button class="elements__item-footer-button" id="likeButton">
                 <img
                   src="./images/like.svg"
                   alt="icono de like"
                   class="elements__item-footer-icon"
+                  id="likeIcon"
                 />
               </button>
             </div>
@@ -174,6 +199,14 @@
               </button>
             </div>
           </card>
+
+          <div id="addModal" class="elements__add-modal modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Añadir item</h2>
+              <form></form>
+            </div>
+          </div>
         </section>
       </main>
 
@@ -181,5 +214,7 @@
         <p class="footer__copyright">© 2021 Around The U.S.</p>
       </footer>
     </div>
+
+    <script src="/js/index.js"></script>
   </body>
 </html>

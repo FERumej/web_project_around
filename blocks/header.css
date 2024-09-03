@@ -5,12 +5,12 @@
 
 }
 
-.nav img {
+.header__nav img {
   width: 126px;
   margin: 28px 127px 37px 27px;
 }
 
-.line {
+.header__line {
   border: 1px solid #545454;
   width: 100%;
 }

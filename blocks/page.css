@@ -6,8 +6,117 @@ body {
   margin: 0 auto;
   font-family: "Inter", "Arial", "sans-serif";
   color: #fff;
-}
-
-.page {
   max-width: 880px;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 35% 1rem;
+  padding: 34px 36px;
+  border: 1px solid #888;
+  color: #000;
+  border-radius: 10px;
+}
+
+.modal-content h2 {
+  text-align: left;
+  margin: 0;
+}
+
+.modal-content button {
+  height: 50px;
+  border-radius: 2px;
+  border: 1px solid #c4c4c4;
+  color: #c4c4c4;
+}
+
+#editForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.875rem;
+}
+
+#name {
+  margin-top: 54px;
+}
+
+#editForm input {
+  border: none;
+  border-bottom: 1px solid black;
+  opacity: 20%;
+  height: 28px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+#editForm input:hover,
+#editForm input:focus,
+#editForm input:focus-visible {
+  border: none;
+  border-bottom: 1px solid black;
+  opacity: 100%;
+  outline: none;
+}
+
+#buttonEdit {
+  margin-top: 24px;
+}
+
+#buttonEdit:disabled {
+  cursor: not-allowed;
+}
+
+#buttonEdit:not(:disabled):hover{
+  cursor: pointer;
+  opacity: 60%;
+}
+
+#openEditModal:hover,
+#openAddModal:hover,
+.close:hover,
+.elements__item-footer-icon:hover {
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.close {
+  color: #fff;
+  float: right;
+  font-size: 30px;
+  font-weight: 100;
+  transform: scale(1.6);
+  position: absolute;
+  top: 5.1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+
+@media (min-width: 768px) {
+  .modal-content {
+    margin: 15% auto;
+    width: 100%;
+    max-width: 430px;
+  }
+
+  .close {
+    position: absolute;
+    font-size: 40px;
+    top: 14rem;
+    right: 40rem;
+    cursor: pointer;
+  }
+}
+
