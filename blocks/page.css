@@ -6,7 +6,6 @@ body {
   margin: 0 auto;
   font-family: "Inter", "Arial", "sans-serif";
   color: #fff;
-  
 }
 
 .modal {
@@ -28,6 +27,7 @@ body {
   border: 1px solid #888;
   color: #000;
   border-radius: 10px;
+  position: relative;
 }
 
 .modal-content h2 {
@@ -42,13 +42,15 @@ body {
   color: #c4c4c4;
 }
 
-#editForm {
+#editForm,
+#addCardForm {
   display: flex;
   flex-direction: column;
   row-gap: 1.875rem;
 }
 
-#name {
+#name,
+#title {
   margin-top: 54px;
 }
 
@@ -78,7 +80,38 @@ body {
   cursor: not-allowed;
 }
 
-#buttonEdit:not(:disabled):hover{
+#buttonEdit:not(:disabled):hover {
+  cursor: pointer;
+  opacity: 60%;
+}
+
+#addCardForm input {
+  border: none;
+  border-bottom: 1px solid black;
+  opacity: 20%;
+  height: 28px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+#addCardForm input:hover,
+#addCardForm input:focus,
+#addCardForm input:focus-visible {
+  border: none;
+  border-bottom: 1px solid black;
+  opacity: 100%;
+  outline: none;
+}
+
+#buttonAdd {
+  margin-top: 24px;
+}
+
+#buttonAdd:disabled {
+  cursor: not-allowed;
+}
+
+#buttonAdd:not(:disabled):hover {
   cursor: pointer;
   opacity: 60%;
 }
@@ -94,21 +127,54 @@ body {
 .close {
   color: #fff;
   float: right;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 100;
   transform: scale(1.6);
   position: absolute;
-  top: 6rem;
-  right: 1rem;
+  top: -2rem;
+  right: 0;
   cursor: pointer;
 }
 
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox__content-wrapper {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox__content {
+  width: 245px;
+  height: auto;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: -2rem;
+  right: -1rem;
+  color: #fff;
+  font-size: 40px;
+  font-weight: lighter;
+  cursor: pointer;
+}
 
 @media (min-width: 768px) {
-  .page { 
+  .page {
     max-width: 720px;
   }
-  
+
   .modal-content {
     margin: 20% auto;
     width: 100%;
@@ -116,17 +182,18 @@ body {
   }
 
   .close {
-    position: absolute;
-    font-size: 40px;
-    top: 7rem;
-    right: 6.5rem;
-    cursor: pointer;
+    top: -2.5rem;
+    right: -1.5rem;
   }
-  
+
+  .lightbox__content {
+    width: 433px;
+    max-height: 90%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  .page { 
+  .page {
     max-width: 880px;
   }
   .modal-content {
@@ -135,23 +202,8 @@ body {
     max-width: 430px;
   }
 
-  .close {
-    position: absolute;
-    font-size: 40px;
-    top: 9rem;
-    right: 23rem;
-    cursor: pointer;
+  .lightbox__content {
+    width: 100%;
+    max-height: 85%;
   }
 }
-
-@media screen and (min-width: 1024px) {
-  .close {
-    position: absolute;
-    font-size: 40px;
-    top: 14rem;
-    right: 40rem;
-    cursor: pointer;
-  }
-}
-
-

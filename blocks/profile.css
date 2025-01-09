@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-.profile__col--name{
+.profile__col--name {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -42,7 +42,7 @@
   background-color: transparent;
   border: 2px solid #fff;
   border-radius: 2px;
-  width: calc(100vw - 2.36rem);
+  width: calc(100vw - 4rem);
   height: 50px;
   margin: 36px 0;
   cursor: pointer;
@@ -51,7 +51,6 @@
 .profile__button-img {
   width: 16px;
 }
-
 
 @media screen and (min-width: 768px) {
   #profile {

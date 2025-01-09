@@ -62,7 +62,7 @@
             </button>
           </div>
 
-          <div id="editModal" class="profile__edit-modal modal">
+          <div class="profile__edit-modal modal" id="editModal">
             <div class="modal-content">
               <span class="close">&times;</span>
 
@@ -90,123 +90,39 @@
         </section>
 
         <section class="elements" id="elements">
-          <card class="elements__item">
-            <img
-              class="elements__img"
-              alt="image grid item"
-              src="./images/kirill-pershin-1088404-unsplash.jpg"
-            />
-            <div class="elements__footer">
-              <h4>Valle Yossemite</h4>
-              <button class="elements__footer-button" id="likeButton">
-                <img
-                  src="./images/like.svg"
-                  alt="icono de like"
-                  class="elements__footer-icon"
-                  id="likeIcon"
-                />
-              </button>
-            </div>
-          </card>
-
-          <card class="elements__item">
-            <img
-              class="elements__img"
-              alt="image grid item"
-              src="./images/kirill-pershin-1404681-unsplash.jpg"
-            />
-            <div class="elements__footer">
-              <h4>Lago Louise</h4>
-              <button class="elements__footer-button">
-                <img
-                  src="./images/like.svg"
-                  alt="icono de like"
-                  class="elements__footer-icon"
-                />
-              </button>
-            </div>
-          </card>
-
-          <card class="elements__item">
-            <img
-              class="elements__img"
-              alt="image grid item"
-              src="./images/kirill-pershin-1556355-unsplash.jpg"
-            />
-            <div class="elements__footer">
-              <h4>Montañas Calvas</h4>
-              <button class="elements__footer-button">
-                <img
-                  src="./images/like.svg"
-                  alt="icono de like"
-                  class="elements__footer-icon"
-                />
-              </button>
-            </div>
-          </card>
-
-          <card class="elements__item">
-            <img
-              class="elements__img"
-              alt="image grid item"
-              src="./images/kirill-pershin-1404681-unsplash-2.jpg"
-            />
-            <div class="elements__footer">
-              <h4>Latemar</h4>
-              <button class="elements__footer-button">
-                <img
-                  src="./images/like.svg"
-                  alt="icono de like"
-                  class="elements__footer-icon"
-                />
-              </button>
-            </div>
-          </card>
-
-          <card class="elements__item">
-            <img
-              class="elements__img"
-              alt="image grid item"
-              src="./images/kirill-pershin-1556355-unsplash-2.jpg"
-            />
-            <div class="elements__footer">
-              <h4>Vanois National</h4>
-              <button class="elements__footer-button">
-                <img
-                  src="./images/like.svg"
-                  alt="icono de like"
-                  class="elements__footer-icon"
-                />
-              </button>
-            </div>
-          </card>
-
-          <card class="elements__item">
-            <img
-              class="elements__img"
-              alt="image grid item"
-              src="./images/kirill-pershin-1088404-unsplash-2.jpg"
-            />
-            <div class="elements__footer">
-              <h4>Lago di Braies</h4>
-              <button class="elements__footer-button">
-                <img
-                  src="./images/like.svg"
-                  alt="icono de like"
-                  class="elements__footer-icon"
-                />
-              </button>
-            </div>
-          </card>
-
-          <div id="addModal" class="elements__add-modal modal">
+          <div class="elements__add-modal modal" id="addModal">
             <div class="modal-content">
               <span class="close">&times;</span>
-              <h2>Añadir item</h2>
-              <form></form>
+              <h2>Nuevo lugar</h2>
+              <form id="addCardForm">
+                <!-- <label for="title">Título:</label> -->
+                <input
+                  placeholder="Título"
+                  type="text"
+                  id="title"
+                  name="title"
+                  required
+                />
+                <!-- <label for="placeimage">Imagen</label> -->
+                <input
+                  placeholder="Enlace a la imagen"
+                  type="text"
+                  id="placeimage"
+                  name="placeimage"
+                  required
+                />
+                <button id="buttonAdd" disabled type="submit">Crear</button>
+              </form>
             </div>
           </div>
         </section>
+
+        <div id="lightbox" class="lightbox">
+          <div class="lightbox__content-wrapper">
+            <span class="lightbox__close">&times;</span>
+            <img class="lightbox__content" id="lightboxImage" />
+          </div>
+        </div>
       </main>
 
       <footer class="footer" id="footer">
