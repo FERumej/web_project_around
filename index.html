@@ -90,32 +90,34 @@
         </section>
 
         <section class="elements" id="elements">
-          <div class="elements__add-modal modal" id="addModal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <h2>Nuevo lugar</h2>
-              <form id="addCardForm">
-                <!-- <label for="title">Título:</label> -->
-                <input
-                  placeholder="Título"
-                  type="text"
-                  id="title"
-                  name="title"
-                  required
-                />
-                <!-- <label for="placeimage">Imagen</label> -->
-                <input
-                  placeholder="Enlace a la imagen"
-                  type="text"
-                  id="placeimage"
-                  name="placeimage"
-                  required
-                />
-                <button id="buttonAdd" disabled type="submit">Crear</button>
-              </form>
-            </div>
-          </div>
+          
         </section>
+
+        <div class="add-modal modal" id="addModal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nuevo lugar</h2>
+            <form id="addCardForm">
+              <!-- <label for="title">Título:</label> -->
+              <input
+                placeholder="Título"
+                type="text"
+                id="title"
+                name="title"
+                required
+              />
+              <!-- <label for="placeimage">Imagen</label> -->
+              <input
+                placeholder="Enlace a la imagen"
+                type="text"
+                id="placeimage"
+                name="placeimage"
+                required
+              />
+              <button id="buttonAdd" disabled type="submit">Crear</button>
+            </form>
+          </div>
+        </div>
 
         <div id="lightbox" class="lightbox">
           <div class="lightbox__content-wrapper">

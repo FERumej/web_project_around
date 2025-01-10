@@ -8,72 +8,114 @@ let profileData = {
   description: "Explorador",
 };
 
-//Tarjetas iniciales
-const initialCards = [
-  {
+// Tarjetas iniciales
+let cards = [
+  { 
+    index: 0,
     name: "Valle de Yosemite",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
   },
-  {
+  { 
+    index: 1,
     name: "Lago Louise",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
   },
   {
+    index: 2,
     name: "Montañas Calvas",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
   },
   {
+    index: 3,
     name: "Latemar",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
   },
   {
+    index: 4,
     name: "Parque Nacional de la Vanoise",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
   },
   {
+    index: 5,
     name: "Lago di Braies",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
 
-function createInitialCards(card) {
-  const cardElement = document.createElement("card");
+let cardIndexCounter = cards.length;
+
+function createCards(card) {
+  const cardElement = document.createElement("div");
   cardElement.classList.add("elements__item");
 
-  cardElement.innerHTML = `
-    <img class="elements__img" alt="image grid item" src="${card.link}" />
-    <div class="elements__footer">
-      <h4>${card.name}</h4>
-      <button class="elements__footer-button">
-        <img src="./images/like.svg" alt="icono de like" class="elements__footer-icon" id="likeIcon" />
-      </button>
-    </div>
-    <button class="elements__delete-button"><img src="./images/trash.svg" alt="trash icon" class="elements__delete-trash" /></button>
-  `;
+  const cardImage = document.createElement("img");
+  cardImage.classList.add("elements__img");
+  cardImage.alt = "image grid item";
+  cardImage.src = card.link;
+
+  const cardFooter = document.createElement("div");
+  cardFooter.classList.add("elements__footer");
+
+  const cardTitle = document.createElement("h4");
+  cardTitle.textContent = card.name;
+
+  const likeButton = document.createElement("button");
+  likeButton.classList.add("elements__footer-button");
+
+  const likeIcon = document.createElement("img");
+  likeIcon.src = "./images/like.svg";
+  likeIcon.alt = "icono de like";
+  likeIcon.classList.add("elements__footer-icon");
+  likeIcon.id = "likeIcon";
+
+  likeButton.appendChild(likeIcon);
+
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("elements__delete-button");
+  deleteButton.setAttribute("data-index", card.index); 
+
+  const deleteIcon = document.createElement("img");
+  deleteIcon.src = "./images/trash.svg";
+  deleteIcon.alt = "trash icon";
+  deleteIcon.classList.add("elements__delete-trash");
+
+  deleteButton.appendChild(deleteIcon);
+
+  cardFooter.appendChild(cardTitle);
+  cardFooter.appendChild(likeButton);
+
+  cardElement.appendChild(cardImage);
+  cardElement.appendChild(cardFooter);
+  cardElement.appendChild(deleteButton);
 
   // Añadir evento para eliminar la tarjeta
-  cardElement
-    .querySelector(".elements__delete-button")
-    .addEventListener("click", () => {
-      cardElement.remove();
-    });
+  deleteButton.addEventListener("click", (event) => {
+    const index = parseInt(event.target.closest("button").getAttribute("data-index"));
+    cards = cards.filter(card => card.index !== index); 
+    renderCards(); 
+  });
 
   // Añadir evento para abrir el lightbox
-  cardElement.querySelector(".elements__img").addEventListener("click", () => {
+  cardImage.addEventListener("click", () => {
     openLightbox(card.link);
   });
 
   return cardElement;
 }
-
-//Funcion para renderizar cards
+// Función para renderizar cards
 function renderCards() {
   const elementsContainer = document.getElementById("elements");
 
-  initialCards.forEach((card) => {
-    const cardElement = createInitialCards(card);
+
+  while (elementsContainer.firstChild) {
+    elementsContainer.removeChild(elementsContainer.firstChild);
+  }
+  
+  cards.forEach((card) => {
+    const cardElement = createCards(card);
     elementsContainer.appendChild(cardElement);
   });
+
 }
 
 // Llama a la función para renderizar las tarjetas
@@ -93,6 +135,17 @@ function renderProfile() {
 
 // Pintar los datos iniciales
 renderProfile();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const maxLength = 50; 
+  const profileTextElements = document.querySelectorAll(".profile__text h1, .profile__text p");
+
+  profileTextElements.forEach((element) => {
+    if (element.textContent.length > maxLength) {
+      element.textContent = element.textContent.slice(0, maxLength) + "...";
+    }
+  });
+});
 
 // Función para inicializar los valores del modal
 function initializeModal() {
@@ -160,6 +213,8 @@ document
 /* -------------------------------------------------------------------------- */
 // Abrir modal de añadir tarjeta
 document.getElementById("openAddModal").addEventListener("click", function () {
+  const addModal = document.getElementById("addModal")
+  console.log(addModal)
   document.getElementById("addModal").style.display = "block";
   initializeElementModal();
 });
@@ -205,36 +260,6 @@ document
   .getElementById("placeimage")
   .addEventListener("input", checkElementsInputs);
 
-// Función para crear una tarjeta
-function createCard(card) {
-  const cardElement = document.createElement("div");
-  cardElement.classList.add("elements__item");
-
-  cardElement.innerHTML = `
-    <img class="elements__img" alt="image grid item" src="${card.link}" />
-    <div class="elements__footer">
-      <h4>${card.name}</h4>
-      <button class="elements__footer-button">
-        <img src="./images/like.svg" alt="icono de like" class="elements__footer-icon" />
-      </button>
-    </div>
-    <button class="elements__delete-button">X</button>
-  `;
-
-  // Añadir evento para eliminar la tarjeta
-  cardElement
-    .querySelector(".elements__delete-button")
-    .addEventListener("click", () => {
-      cardElement.remove();
-    });
-
-  // Añadir evento para abrir el lightbox
-  cardElement.querySelector(".elements__img").addEventListener("click", () => {
-    openLightbox(card.link);
-  });
-
-  return cardElement;
-}
 
 // Manejar el evento submit del formulario
 document
@@ -246,12 +271,13 @@ document
     const placeimageInput = document.getElementById("placeimage").value;
 
     const newCard = {
+      index: cardIndexCounter++,
       name: titleInput,
       link: placeimageInput,
     };
 
-    const cardElement = createCard(newCard);
-    document.getElementById("elements").appendChild(cardElement);
+    cards.unshift(newCard); 
+    renderCards(); 
 
     // Limpiar el formulario
     document.getElementById("addCardForm").reset();

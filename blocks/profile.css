@@ -16,6 +16,10 @@
   font-size: 22px;
   font-weight: 500;
   line-height: 26.63px;
+  overflow: hidden; /* Ocultar el desbordamiento */
+  text-overflow: ellipsis; /* Añadir puntos suspensivos (...) */
+  white-space: nowrap; 
+  max-width: 250px;/* Evitar que el texto se divida en varias líneas */
 }
 
 .profile__text p {
@@ -25,6 +29,10 @@
   font-family: "Inter", sans-serif;
   line-height: 16.94px;
   margin-left: 2.5rem;
+  overflow: hidden; /* Ocultar el desbordamiento */
+  text-overflow: ellipsis; /* Añadir puntos suspensivos (...) */
+  white-space: nowrap; 
+  max-width: 250px;/* Evitar que el texto se divida en varias líneas */
 }
 
 .profile__edit-button {
@@ -73,6 +81,7 @@
     line-height: 48px;
     margin: 0;
     margin-top: 22px;
+    max-width: 420px;
   }
   .profile__text p {
     margin-top: 14px;
@@ -80,6 +89,7 @@
     line-height: 21.78px;
     margin-left: 0;
     text-align: left;
+    max-width: 420px;
   }
 
   .profile__edit-button {
